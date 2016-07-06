@@ -1,0 +1,105 @@
+/*
+ * plain.css
+ *
+ * Created by tomonagata on Jun 18, 2016.
+ * Copyright (c) 2016 tomonagata. All rights reserved.
+ */
+
+@import url(https://fonts.googleapis.com/css?family=Montez);
+
+
+body {
+    margin: 0px;
+    background-color: #ffffff;
+}
+
+#header {
+    background-color:transparent;
+    color: #000000;
+    font-family: Montez;
+    font-size: 22px;
+    padding: 5px 10px 0 0;
+    text-align: right;
+}
+
+#title {
+	font-size: 30px;
+	color: #777;
+	padding: 10px;
+}
+
+#wrapper {
+    position: relative;
+    max-width: 1096px;
+    margin: 0 auto;   /* centering */
+}
+
+.board {
+    width: 25%;
+    margin: 0 auto;   /* centering */
+    position: relative;
+    float: left;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;   /* centering */
+    position: relative;
+}
+
+.item {
+    background-color: #ffffff;
+    margin: 10px;
+    width: 232px;
+    padding: 8px;
+    border: 1px solid #eee;
+
+    box-shadow: 0px 0px 3px 1px rgba(200, 200, 200, 0.8);
+}
+
+.item.x2 {
+    width: 640px;
+}
+
+.item img {
+    width: 100%;
+}
+
+.item p {
+	text-align: left;
+	margin: 0px 0px 0px 10px;
+	font-size: 14px;
+	color: #777;
+}
+
+/* profile photo */
+.profPhoto {
+    float: left;
+    width: 50px;
+}
+.profPhoto img {
+     width: 30px;
+     height: 30px;
+     margin: 10px;
+     vertical-align: middle;
+     border-radius: 50%;
+}
+
+/* user name */
+.name {
+    height: 50px;
+    color: #777;
+    display: table;
+}
+.name p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 12px;
+}
+
+p#ww {
+	text-align: center;
+	color: #999;
+	font-size: 14px;
+}
