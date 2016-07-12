@@ -47,6 +47,10 @@ body {
     position: relative;
 }
 
+.dummy {
+    opacity: 0;
+}
+
 .item {
     background-color: #ffffff;
     margin: 10px;
