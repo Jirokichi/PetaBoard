@@ -1,0 +1,62 @@
+/*
+sticker.css
+
+Created by tomonagata on Jun 18, 2016.
+Copyright (c) 2016 tomonagata. All rights reserved.
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Crafty+Girls);
+@font-face {
+	font-family: 'yomogi';
+	src: url(../font/yomogifont.ttf);
+}
+
+body {
+    background: url(../image/p0427_l.jpg);
+}
+
+#header {
+}
+
+#title {
+	font-size: 34px;
+	color: rgb(113, 78, 0);
+    font-family: 'Crafty Girls', cursive;
+}
+
+#wrapper {
+}
+
+.board {
+}
+
+.container {
+}
+
+.dummy {
+}
+
+.item {
+    background: linear-gradient(175deg, rgba(255, 253, 196, 1), rgba(252, 233, 104, 1));
+    box-shadow: 0 12px 10px -6px rgba(0, 0, 0, 0.35);
+}
+
+.item img {
+}
+
+.item p {
+    color: rgb(113, 78, 0);
+    font-family: 'Crafty Girls', 'yomogi';
+}
+
+/* profile photo */
+.profPhoto {
+}
+.profPhoto img {
+}
+
+/* user name */
+.name {
+}
+.name p {
+}

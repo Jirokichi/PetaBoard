@@ -1,0 +1,94 @@
+/*
+petaBoard.css
+
+Created by tomonagata on Jun 18, 2016.
+Copyright (c) 2016 tomonagata. All rights reserved.
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Montez);
+
+
+body {
+    margin: 0px;
+    background-color: transparent;
+}
+
+#header {
+    bottom: 0;
+    width: 100%;
+    padding: 0px 10px 0 0;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff;
+    font-family: Montez;
+    font-size: 20px;
+    text-align: right;
+}
+
+#title {
+	padding: 10px;
+}
+
+#wrapper {
+    position: relative;
+    max-width: 1096px;
+    margin: 0 auto;   /* centering */
+}
+
+.board {
+    width: 25%;
+    margin: 0 auto;   /* centering */
+    position: relative;
+    float: left;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;   /* centering */
+    position: relative;
+}
+
+.dummy {
+    opacity: 0;
+}
+
+.item {
+    margin: 10px;
+    width: 232px;
+    padding: 8px;
+}
+
+.item img {
+    width: 100%;
+}
+
+.item p {
+	text-align: left;
+	margin: 0px 0px 0px 10px;
+	font-size: 14px;
+}
+
+/* profile photo */
+.profPhoto {
+    float: left;
+    width: 50px;
+}
+.profPhoto img {
+     width: 30px;
+     height: 30px;
+     margin: 10px;
+     vertical-align: middle;
+     border-radius: 50%;
+}
+
+/* user name */
+.name {
+    height: 50px;
+    display: table;
+}
+.name p {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: left;
+    font-size: 12px;
+}

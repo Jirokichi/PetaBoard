@@ -1,0 +1,67 @@
+/*
+photo.css
+
+Created by tomonagata on Jun 18, 2016.
+Copyright (c) 2016 tomonagata. All rights reserved.
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Cormorant+SC:400,700);
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjapanese.css);
+
+
+body {
+    background: linear-gradient(170deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0)), url(http://weco.jp/wp-content/uploads/2014/02/higuchi_r2_top.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: left;
+}
+
+#header {
+}
+
+#title {
+    font-size: 30px;
+    color: #777;
+    font-family: 'Cormorant SC', serif;
+    font-weight: 700;
+}
+
+#wrapper {
+}
+
+.board {
+}
+
+.container {
+}
+
+.dummy {
+}
+
+.item {
+    border: 1px solid #eee;
+    box-shadow: 0px 0px 3px 1px rgba(200, 200, 200, 0.8);
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.item img {
+}
+
+.item p {
+	color: #777;
+    font-family: 'Cormorant SC', 'Noto Sans Japanese';
+}
+
+/* profile photo */
+.profPhoto {
+}
+.profPhoto img {
+}
+
+/* user name */
+.name {
+}
+.name p {
+}
