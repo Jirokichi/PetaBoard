@@ -24,22 +24,17 @@ jQuery( function($)
     }
 
     // triggered after new posts have been loaded.
+    var tmp = 0;
     function onPostsLoaded( json ) {
-        // adds posted data to PetaBoard.
-        var tmp = Math.floor( Math.random() * 4 );
-        var boardId = tmp % 4;
-
+        // add posted data to PetaBoard.
+        tmp = tmp % 4;
+        var boardId = tmp;
         this.boardArray[boardId].addPost( json );
+        tmp = tmp + 1;
     }
 
     // call the init function first.
     window.addEventListener( 'load', init, false );
-
-    // [for debug] show window size.
-    $('#ww span').text( $(window).width() );
-    $(window).resize( function () {
-        $('#ww span').text( $(window).width() );
-    } );
 
     // [for debug] button event.
     var id = 0;

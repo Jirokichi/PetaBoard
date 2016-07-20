@@ -10,41 +10,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PetaBoard</title>
     <meta name="description" content="PetaBoard" />
-    <link href="stylesheet/plain.css" rel="stylesheet" type="text/css">
+    <link href="stylesheet/petaBoard.css" rel="stylesheet" type="text/css">
+    <link id="theme" href="stylesheet/plain.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+    function changesytle( cssid, cssfile ) {
+        document.getElementById( cssid ).href = cssfile;
+    }
+    </script>
   </head>
   <body>
-    <div id="header">
-        Produced by Peta Inc. 10<sup>15</sup>
-    </div>
     <div id="wrapper">
         <div id="title">
-            MESSAGE SAMPLE めっせーじ　サンプル
-            <p id="ww"> Window Width : <span></span></p><button id=button>append</button>
+            MESSAGE BOARD SAMPLE
         </div>
         <div class="board">
-            <div class="container effect-2" id="container0">
+            <div class="container" id="container0">
                 <div class="item dummy"></div>
                 <!-- contents -->
             </div>
         </div>
         <div class="board">
-            <div class="container effect-2" id="container1">
+            <div class="container" id="container1">
                 <div class="item dummy"></div>
                 <!-- contents -->
             </div>
         </div>
         <div class="board">
-            <div class="container effect-2" id="container2">
+            <div class="container" id="container2">
                 <div class="item dummy"></div>
                 <!-- contents -->
             </div>
         </div>
         <div class="board">
-            <div class="container effect-2" id="container3">
+            <div class="container" id="container3">
                 <div class="item dummy"></div>
                 <!-- contents -->
             </div>
         </div>
+    </div>
+    <div id="header">
+        <div style="bottom: 0; padding: 0px 10px; text-align: left; float: left;">
+        <a onclick="changesytle('theme','stylesheet/plain.css');">plane</a>
+        <a onclick="changesytle('theme','stylesheet/black.css');">black</a>
+        <a onclick="changesytle('theme','stylesheet/sticker.css');">sticker</a>
+        <a onclick="changesytle('theme','stylesheet/photo.css');">photo</a>
+        <button id=button>append</button></div>
+        Produced by Peta Inc. 10<sup>15</sup>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
