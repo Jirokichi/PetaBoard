@@ -5,7 +5,18 @@ Created by tomonagata on May 16, 2016.
 Copyright (c) 2016 tomonagata. All rights reserved.
 */
 
+
+
+function changesytle( cssid, cssfile ) {
+    document.getElementById( cssid ).href = cssfile;
+}
+
+
+
+
 var mt = new MersenneTwister();
+
+
 
 function randomInteger(low, high)
 {

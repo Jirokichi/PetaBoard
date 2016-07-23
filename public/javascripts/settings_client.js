@@ -59,7 +59,7 @@ app.config(['$routeProvider', function($routeProvider){
             templateUrl: 'partials/update.html',
             controller: 'UpdateCtrl'
         }).when('/app', {
-            templateUrl: 'petaBoardApp/index_PetaBoard.html',
+            templateUrl: 'petaBoardApp/index_petaBoard.html',
             controller: 'ApplicationCtrl'
         }).when('/bubbleApp', {
             templateUrl: 'bubbleApp/index_2d.html',

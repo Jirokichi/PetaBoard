@@ -17,6 +17,7 @@ function PetaBoardApp(){
     var boardArray = new Array()
 
     // messageのダウンロード
+    console.log("create request")
     var request = new MyPostRequest()
     var url = '/api/messages';
     console.log("url:" + url)

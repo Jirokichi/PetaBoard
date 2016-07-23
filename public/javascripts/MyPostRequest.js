@@ -13,6 +13,7 @@ jQuery( function($){
 
     MyPostRequest.prototype = {
         sendGetRequest : function( url ) {
+            console.log("sendGetRequest")
             var self = this;
             req = new XMLHttpRequest();
             req.open("GET", url, false);
@@ -24,6 +25,7 @@ jQuery( function($){
 
 
     function setParameters(req) {
+        console.log("setParameters - Content-Type = application/json")
         req.setRequestHeader('Content-Type', 'application/json');
         return req;
     }

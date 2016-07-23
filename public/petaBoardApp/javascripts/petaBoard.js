@@ -33,6 +33,9 @@
 			});
 		},
         addPost : function( data ) {
+            if(!data){
+                return
+            }
             var self = this;
             elements = createItemElement( data );
             $(this.container).prepend( $(elements) );
