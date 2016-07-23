@@ -1,0 +1,33 @@
+doctype html
+html(ng-app='Setting')
+html
+  head
+    title= title
+    script(src='https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js')
+    script(src='https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-resource.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.5/angular-route.js')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js')
+    
+    //- whole
+    script(src='/javascripts/settings_client.js')
+    //- common
+    script(src='/javascripts/MyPostRequest.js')
+    script(src='/javascripts/model.js')
+    script(src='/javascripts/mt.js')
+    script(src='/javascripts/common.js')
+    script(src='/socket.io/socket.io.js')
+    //- BubbleApp
+    script(src='/bubbleApp/javascripts/BubbleApp.js')
+    //- petaBoardApp
+    script(src='/petaBoardApp/javascripts/main.js')
+    script(src='/petaBoardApp/javascripts/petaBoard.js')
+
+
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/css?family=Lora:400,400italic|Montez|Muli:400,400italic')
+    link(rel='stylesheet', href='http://fonts.googleapis.com/earlyaccess/notosansjapanese.css')
+  body
+    block content

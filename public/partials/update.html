@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
+        <title>Wedding Installation Application</title>
+
+        <!-- **************************************** -->
+        <!-- ナビゲーションバーの設定 -->
+        <nav class="navbar navbar-inverse bg-faded navbar-fixed-top" role="navigation">
+            <div class="container-fluid ">
+                <div class="navbar-header">
+
+                    <p class="navbar-brand petaNav">Peta</span></p>
+                    <a class="navbar-brand petaNav" href="/#/app">Wedding Installation Application</a>
+                    
+                    <!-- 幅が短い場合のメニューボタン。"data-target"で関係性を記述している -->
+                    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#gNavBar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+
+                <!-- グローバルナビの中身 -->
+                <div class="collapse navbar-collapse navbar-right" id="gNavBar">
+                    <ul class="nav navbar-nav ">
+                        <a class="navbar-brand" ng-click="save()">保存</a> 
+                        <a class="navbar-brand" ng-click="deleteAllSetting()">削除</a> 
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- **************************************** -->
+        <!-- 関係スクリプトの読み込み -->
+        <script src="/socket.io/socket.io.js"></script>
+        <!-- **************************************** -->
+        <!-- 関係CSSの読み込み -->
+        <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">  
+    </head>
+
+    <body>
+
+        <div >
+            <form class="form-group">
+                <label >AccessToken</label>
+
+                <div class="form-horizontal" >
+                    <div class="col-xs-10">
+                        <input class="form-control"  ng-model="setting.accessToken"></input>
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="button" value="グループ更新" class="btn btn-primary" ng-click="updateGroup()"></input>  
+                    </div>
+                </div>
+
+                <label >Group</label>
+                <div class="form-horizontal" >
+                    <select ng-model="setting.selectedGroup" ng-options="g.name for g in setting.groups"></select>
+                    <!-- <select ng-class="groupSelectButton", name="select1" class="form-control"> 
+                        <option value="">{{groups[0].name}}
+                        <option value="sample1">{{setting.selectedGroupName}}
+                    </select> -->
+                </div> 
+
+
+                <label>Synchronization Setting</label>
+
+                <div class="form-horizontal" >
+                    <input type="checkbox" ng-model="setting.runingSync" value="1" checked="checked">FaceBookのデータと同期する場合はこちらをONにしてください。
+                </div>
+
+                <hr />
+
+                <div class="form-horizontal" >
+                    <label> 注意：変更した結果を反映するには保存ボタンをクリックする必要があります。</label>
+                </div>
+
+                <!-- <div class="pull-right">
+                    <input type="button" value="Save" class="btn btn-primary btn-right" ng-click="save()"></input>   
+                </div> -->
+               
+            </form>
+        </div>
+
+    </body>
+</html>
+
+
+
+

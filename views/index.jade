@@ -1,0 +1,32 @@
+extends layout
+
+block content
+	div(ng-view)
+//
+	doctype
+	html(lang="ja")
+		head
+			meta(charset="utf-8")
+			srctyle(src="css/style.css")
+			title Jadeテスト
+	body
+		block content
+			h1= title
+			p Welcome to #{title}
+			.form-group
+			.row
+				label.col-md-2.control-label 出版社
+				.col-md-10
+					select#publisher
+						each publisher, i in publishers
+							option(value=i)  #{publisher}
+			// ファイル入力は使ってないよ
+				.form-group
+				.row
+					label.col-md-2.control-label カバー写真
+					.col-md-10
+						input#inputImage(type="file")
+			form(name="login", action="/login", method="post")
+			input(type="text", name="user")
+			input(type="password", name="pass")
+			input(type="submit", value="login")

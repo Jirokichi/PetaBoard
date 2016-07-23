@@ -1,0 +1,17 @@
+<!-- <h1>Home Page</h1> -->
+
+<!-- <ul>
+    <li ng-repeat='setting in settings'>{{setting.access_token}}</li>
+</ul>
+ -->
+
+<h1>設定</h1>
+
+<form class="form-group">
+    <div>
+        <label >AccessToken</label>		
+        <input class="form-control"  ng-model="setting.accessToken"></input>
+    </div>
+
+    <input type="button" value="Save" class="btn btn-primary" ng-click="save()"></input>	
+</form>

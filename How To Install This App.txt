@@ -1,0 +1,32 @@
+導入時の手順書
+
+1. 下準備：Install node.js, express, mongoDB, and nodemon（基本次のTutrialを参考にした：https://blog.udemy.com/node-js-tutorial/）
+	1.0 GitからWedding-InstallationのClone
+	1.1 node.js
+   		- 2.13.0(2016/6/12)を利用してる
+ 	1.2 express(MVCフレームワーク生成モジュール: これでMVCフレームワークを定義している。)
+   		- 4.13.0を利用して初期テンプレート作成
+		- ＊開発時に利用するだけなので作成済みのアプリを動作させるだけなら必要ない
+ 	1.3 mongoDB
+   		- データ保存に利用している。アプリケーションにはすでに組み込んでいる。
+		- データの閲覧を簡単にするため、RoboMongoツール（Macアプリ）を下記からインストールしておくことを推奨する。
+   			- http://robomongo.org
+   		- 「WeddingInstallation-Peta-Inc」という名前で、ポートは27018を使うDBをあらかじめ作成すること。
+   			- 注意：mongodコマンドでDBをコマンドラインで実行していないとエラーが発生する
+ 	1.4 nodemon
+   		- app.jsなどに変更があった際に、自動でアプリがビルド&実行されるためのツール。app.jsがあるフォルダで、nodemonを実行すれば使える。
+   
+2. Wedding-Installationの環境構築手順
+	2.0 Gitから該当のアプリダウンロード
+ 	2.1 "node install"で依存しているモジュールをダウンロード(カレントディレクトリは"package.jsonがあるフォルダ")
+ 	2.2 MongoDBの設定(＊ターミナルで"mongod"を実行していないとDBの操作ができないので注意)
+ 		- Connection: "localhost"
+ 			- Addess: localhost:27017
+ 		- DB: "WeddingInstallation"
+ 		- Collections: "Messages" and "Setting"
+	2.3 他にはないはず（もれてたらすみません）
+ 
+3. Wedding-Installationの実行手順
+	3.1 ターミナルで"mongod"を実行
+	3.2 ターミナル(3.1とは別タブもしくは別Window)で、"WeddingApplication_Peta-Inc"ディレクトリで"nodemon"を実施
+	3.3 ブラウザで"http://localhost:3000/"を確認(ChromeがBetter)

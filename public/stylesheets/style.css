@@ -1,0 +1,25 @@
+/* "Noto Sans CJK JP" licensed under the SIL Open Font License
+ * https://www.google.com/get/noto/#sans-jpan*/
+
+
+body {
+  background-image: url("../images/wood.jpg");
+  /*navbar-fixed-topをセットしている場合必要*/
+  padding: 50px;
+  padding-top: 70px;
+  /*font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;*/
+  font-family: "Noto Sans JP", sans-serif;
+  
+}
+
+.petaNav{
+  /*font-family: 'Noto Sans JP', sans-serif;*/
+  font-family: "Montez", 'Noto Sans Javanese',"游ゴシック体","Yu Gothic","YuGothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", "Meiryo", "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  /*font-weight: 900;*/
+  /*font-family: Montez; */
+  font-size: 25px;
+}
+
+a {
+  color: #00B7FF;
+}

@@ -49,10 +49,12 @@
         item.setAttribute( 'class', 'item' );
 
         // add photos to item
-        for (var j = 0; j < json.pictures.length; j++) {
-            var photo = document.createElement( 'img' );
-            photo.src = jsonFolder + '/Images/' + json.pictures[j];
-            item.appendChild( photo );
+        if(json.imageUrls){
+            for (var j = 0; j < json.imageUrls.length; j++) {
+                var photo = document.createElement( 'img' );
+                photo.src = json.imageUrls[j];
+                item.appendChild( photo );
+            }
         }
 
         // create message box
@@ -63,7 +65,7 @@
         var profPhoto = document.createElement( 'div' );
         profPhoto.setAttribute( 'class', 'profPhoto' );
         img = document.createElement( 'img' );
-        img.src = json.userImageUrl;
+        img.src = json.userPicture;
         profPhoto.appendChild( img );
         msgBox.appendChild( profPhoto );
 
