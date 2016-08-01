@@ -13,23 +13,11 @@ jQuery( function($){
         var updatedTime
 
         running = true
-        var fbMessages = []
-        var num = 0
+        var messageManger = new MessageManger()
 
         console.log("Start BubbleApp");
         var objId = 0;
         var objArray = new Array();
-
-        
-        console.log("bubble init")
-        var request = new MyPostRequest()
-        var url = '/api/messages';
-        console.log("url:" + url)
-        fbMessages = JSON.parse(request.sendGetRequest(url));
-        if(fbMessages && fbMessages.length > 0){
-            updatedTime = fbMessages[0].updated_time
-        }
-        console.log("updatedTime:" + updatedTime)
 
 
         var getPostedInterval = setInterval(onPosted, 500);
@@ -37,7 +25,7 @@ jQuery( function($){
     
 
         function onDownloaded(){
-            console.log("onDownloaded - " + updatedTime)
+            console.log("onDownloaded - " + messageManger.lastUpdatedTime)
 
             // ページ遷移をしていないかの確認
             var container = document.getElementById('bubbleContainer');
@@ -48,19 +36,7 @@ jQuery( function($){
             }
 
 
-            if(!updatedTime){
-                console.log(" - まーだー")
-                return
-            }
-                
-            var url = '/api/messages/' + updatedTime;
-            console.log("url:" + url)
-            var tmpMessage = JSON.parse(request.sendGetRequest(url));
-            console.log("tmpMessage - " + tmpMessage)
-            if(tmpMessage.length > 0){
-                updatedTime = tmpMessage[0].updated_time 
-                fbMessages.push(tmpMessage)
-            }
+            messageManger.downloadNewMessages()
 
         }
 
@@ -74,12 +50,11 @@ jQuery( function($){
             }
 
             
-            console.log(fbMessages.length + "/" + num)
-            if(fbMessages.length == 0){
-                alert("メッセージゼロ")
+            var fbMessage = messageManger.getCurrentMessage()
+            if(fbMessage == null){
+                console.log("予期せぬエラー")
                 return
             }
-            var fbMessage = fbMessages[num]
             if (fbMessage.message != "") {
                 var bubble = createBubble(fbMessage);
                 bubble.setAttribute('id', "objId" + objId);
@@ -103,13 +78,6 @@ jQuery( function($){
                 var obj = objArray.shift();
                 obj.classList.toggle("play");
             }
-
-            if(num < fbMessages.length - 1){
-                num++
-            }else{
-                num = 0
-            }
-
         }
 
         function createBubble(fbMessage)

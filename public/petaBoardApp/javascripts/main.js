@@ -7,27 +7,23 @@
 
 function PetaBoardApp(){
     console.log("start PetaBoardApp")
-    // 最後に取得された時刻
-    var updatedTime
-    // 表示するメッセージ
-    var fbMessages = []
+
     // 現在表示しているメッセージの番号
     var num = 0
     // ボードの配列
     var boardArray = new Array()
 
-    // messageのダウンロード
-    console.log("create request")
-    var request = new MyPostRequest()
-    var url = '/api/messages';
-    console.log("url:" + url)
-    fbMessages = JSON.parse(request.sendGetRequest(url));
-    if(fbMessages && fbMessages.length > 0){
-        updatedTime = fbMessages[0].updated_time
-    }
-    console.log("updatedTime:" + updatedTime)
-
+    // メッセージの管理
+    var messageManger = new MessageManger()
     
+    if(messageManger == null){
+        console.log("初期化に失敗")
+        return
+    }
+
+    // 定期的に新規追加メッセージがないか確認する
+    var getDownloadedInterval = setInterval(onDownloaded, 10000);
+    console.log("a")
     for (var i = 0; i < 4; i++) {
         var board = new petaBoard( document.getElementById( 'container' + i ), {
             itemSelector : '.item',
@@ -38,6 +34,17 @@ function PetaBoardApp(){
         boardArray.push( board );
     }
 
+    function onDownloaded(){
+        console.log("onDownloaded - " + messageManger.lastUpdatedTime)
+        // ページ遷移をしていないかの確認
+        var container = document.getElementById('container0')
+        if(container == null){
+            console.log("container0が行方不明（ページ移動した）のため停止 - onDownloaded")
+            clearInterval(getDownloadedInterval)
+            return
+        }
+        messageManger.downloadNewMessages()
+    }
 
     // triggered after new posts have been loaded.
     var tmp = 0;
@@ -52,13 +59,9 @@ function PetaBoardApp(){
     // [for debug] button event.
     var id = 0;
     $('#button').on( 'click', function() {
-        console.log("button click - " + "[ " + id +" ]" + fbMessages[id])
-        onPostsLoaded( fbMessages[id] );
-
-        id = id + 1;
-        if (id > fbMessages.length) {
-            id = 0;
-        }
+        
+        console.log("button click")
+        onPostsLoaded( messageManger.getCurrentMessage() );
     } );
 
     // [for debug] load json file.
